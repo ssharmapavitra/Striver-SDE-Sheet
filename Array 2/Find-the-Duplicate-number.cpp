@@ -19,23 +19,42 @@ public:
     }
 };
 
-/*
-class Solution {
+class Solution
+{
 public:
-    int findDuplicate(vector<int>& nums) {
-        unordered_map<int,int> us;
+    int findDuplicate(vector<int> &nums)
+    {
+        unordered_map<int, int> us;
         int ans;
-        for(int i=0;i<nums.size();i++)
+        for (int i = 0; i < nums.size(); i++)
         {
-            if(us.find(nums[i])==us.end())
-                us.insert(make_pair(nums[i],1));
+            if (us.find(nums[i]) == us.end())
+                us.insert(make_pair(nums[i], 1));
             else
             {
-                ans=nums[i];
+                ans = nums[i];
                 break;
             }
         }
         return ans;
     }
 };
-*/
+
+class Solution
+{
+public:
+    int findDuplicate(vector<int> &nums)
+    {
+        sort(nums.begin(), nums.end());
+        int ans;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] == nums[i + 1])
+            {
+                ans = nums[i];
+                break;
+            }
+        }
+        return ans;
+    }
+};
