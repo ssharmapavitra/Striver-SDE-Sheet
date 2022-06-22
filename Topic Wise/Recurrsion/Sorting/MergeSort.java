@@ -15,7 +15,7 @@ public class MergeSort {
             merged[x++] = arr[idx1++];
         }
         while (idx2 <= ei) {
-            merged[x++] = arr[idx2++];
+            merged[x++] = arr[idx2++];  
         }
         for (int i = 0, j = si; i < merged.length; i++, j++)
             arr[j] = merged[i];
